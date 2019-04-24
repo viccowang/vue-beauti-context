@@ -35,7 +35,9 @@ export default {
 </script>
 <style lang="scss">
 .beauti-contextmenu-item {
-
+  list-style:none;
+  margin: 0;
+  
   span {
     display: inline-block;
 

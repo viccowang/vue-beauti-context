@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BeautiContext Demo</title>
+  <link rel="stylesheet" href="./lib/style.css">
+</head>
+<body>
+  <div id="app">
+    <h2>Beauti Context for <span>Vue 2.x</span></h2>
+    <section>
+        <h4>简单的弹出一个Text</h4>
+        <button @click="showTip($event)">弹出一个Tetxt</button>
+    </section>
+    <section>
+        <h4>可以传递一些参数的弹出窗</h4>
+        <input type="text" v-model="inputValue"> <p>
+        <button @click="showPassValue($event)">弹出Input中的内容</button>
+    </section>
+    <section>
+        <h4>指令模式</h4>
+        <beauti-context ref="menu" type="contextmenu" style="padding: 10px">
+          Hello World! This is a directive!
+        </beauti-context>
+        <button v-beauti-context:menu>右键弹出指令模式窗口</button>
+    </section>
+    <section>
+        <h4>悬停菜单模式</h4>
+        <beauti-context ref="menu2" type="mouseenter" :debounceTime="1000">
+          <beauti-contextmenu>
+            <beauti-contextmenu-item>New</beauti-contextmenu-item>
+            <beauti-contextmenu-item>Edit</beauti-contextmenu-item>
+            <beauti-contextmenu-item divider></beauti-contextmenu-item>
+            <beauti-contextmenu-item>Delete</beauti-contextmenu-item>
+          </beauti-contextmenu>
+        </beauti-context>
+        <button v-beauti-context:menu2>悬停后弹出</button>
+
+
+        <beauti-context ref="menu3" type="contextmenu">
+            <beauti-contextmenu>
+              <beauti-context-submenu v-for="(menu,idx) in contextMenuArr" :key="idx" :label="menu.name">
+                <beauti-contextmenu-item @click="clickHandler($event, menu)">New</beauti-contextmenu-item>
+                <beauti-contextmenu-item @click="clickHandler($event, menu)">Edit</beauti-contextmenu-item>
+                <beauti-contextmenu-item @click="clickHandler($event, menu)">Delete</beauti-contextmenu-item>
+              </beauti-context-submenu>
+         
+            </beauti-contextmenu>
+          </beauti-context>
+
+        <button v-beauti-context:menu3>右键弹出动态生成菜单</button>
+    </section>
+  </div>
+
+  <script src="lib/vue.min.js"></script>
+  <script src="../dist/vue-beauti-context.umd.min.js"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data () {
+        return {
+          inputValue: 'Change some value here...',
+          contextMenuArr: [
+            { name: 'Stev Jobs' },
+            { name: 'Jack Ma' },
+            { name: 'Bill Gates' },
+            { name: 'Vicco Wang' }
+          ]
+        }
+      },
+      methods: {
+        showTip (ev) {
+          this.$beautiContext({
+            event: ev,
+            text: 'Hello World!',
+            customStyle: {
+              padding: '10px'
+            }
+          })
+        },
+        showPassValue (ev) {
+          this.$beautiContext({
+            event: ev,
+            text: this.inputValue,
+            customStyle: {
+              padding: '10px'
+            }
+          })
+        },
+        clickHandler (ev, menu) {
+          alert( 'menu: ' + menu.name )
+        }
+      }
+    })
+
+  </script>
+</body>
+</html>

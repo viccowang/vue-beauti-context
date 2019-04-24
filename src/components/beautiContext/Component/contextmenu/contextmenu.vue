@@ -19,8 +19,10 @@ export default {
 }
 </script>
 <style lang="scss">
+
 .beauti-contextmenu-ul {
   padding:4px 0;
+  margin:0;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;

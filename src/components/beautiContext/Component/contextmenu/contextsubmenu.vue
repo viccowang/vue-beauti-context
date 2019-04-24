@@ -78,8 +78,10 @@ export default {
 <style lang="scss" scoped>
 .beauti-contextmenu-submenu {
   position: relative;
+  margin:0;
   display: flex;
   box-sizing: border-box;
+  list-style: none;
 
   span {
     display: inline-block;
@@ -106,6 +108,7 @@ export default {
   .beauti-contextmenu-sub-ul {
     position: absolute;
     padding:4px 0;
+    margin:0;
     border-radius:5px;
     box-shadow: 0 5px 10px rgba(0,0,0,.15);
     background-color: #fff;

@@ -1,6 +1,6 @@
 {
   "name": "vue-beauti-context",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "keywords": [
     "vue",
@@ -17,7 +17,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-lib": "vue-cli-service build --target lib ./src/components/index.js",
+    "build-lib": "vue-cli-service build --target lib ./src/components/beautiContext/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

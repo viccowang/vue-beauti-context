@@ -6,6 +6,12 @@
 
 预览
 
+![打开一个地图窗口](http://i66.tinypic.com/f3ci6r.png)
+
+![自定义样式](http://i65.tinypic.com/2rcwplf.png)
+
+![右键菜单](http://i66.tinypic.com/2nu7lo5.png)
+
 <!-- [在线demo](https://codepen.io/vicco/pen/xBQVJx) -->
 
 ## 功能:
@@ -18,6 +24,13 @@
 ## 使用:
 通过 npm 指令安装:
 > npm i vue-beauti-context --save
+
+#### 通过CDN直接引用
+```javascript
+<script src="https://cdn.jsdelivr.net/npm/vue-beauti-context@0.1.1/dist/vue-beauti-context.umd.min.js"></script>
+```
+
+#### 在Vue单文件中引用
 
 在需要使用的组件中加载:
 ```javascript
@@ -123,6 +136,12 @@ OK，这里我们提供一套制作好的完美的多级右键菜单可供使用
 | 事件 | 描述 | 参数 |
 | -- | -- | -- |
 | beforeShow | 菜单展示前的回调 | this(当前点击的菜单实例), eventTarget(触发窗口的触发对象), params(通过指令传递的参数) |
+
+### beauti-context-submenu 属性
+| 属性 | 描述 | 必须 | 默认值 | 可选值 |
+| -- | -- | -- | -- | -- |
+| label | 当前菜单的名称，设置子菜单时，当前菜单会需要名称，并且自动在右侧生成一个箭头符号 | 非必须 | - | String |
+
 
 ### beauti-contextmenu-item 属性
 | 属性 | 描述 | 必须 | 默认值 | 可选值 |

@@ -6,7 +6,15 @@
     <h2>Beauti Context Component 
       <span>for Vue 2.x</span>
     </h2>
-    <a href="https://www.npmjs.com/package/vue-rating-it"><img src="https://img.shields.io/npm/v/vue-roll-up.svg?style=flat-square" /></a>
+    <div class="shield">
+      <span>
+        <a href="https://www.npmjs.com/package/vue-beauti-context"><img src="https://img.shields.io/npm/v/vue-beauti-context.svg?style=flat-square" /></a>
+      </span>
+      <span>
+        <img src="https://img.shields.io/npm/l/vue-beauti-context.svg" alt="">
+      </span>
+    </div>
+
     <section>
       <h4>描述</h4>
       <p>该组件可以通过鼠标事件，使用Vue实例化或者指令的方式生成一个弹出窗口，窗口内容可以是文本，或者同步、异步的Vue组件，可以是任何内容</p>
@@ -60,6 +68,13 @@ html, body {
       color: rgb(214, 214, 214);
       border-radius:5px;
       transform: scale(.7);
+    }
+  }
+
+  .shield {
+    span {
+      display: inline-block;
+      margin: 0 10px;
     }
   }
 
