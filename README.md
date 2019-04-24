@@ -38,7 +38,7 @@
 
 在需要使用的组件中加载:
 ```javascript
- import BeautiContext from 'beautiContext'
+ import BeautiContext from 'vue-beauti-context'
 ```
 
 接着注册组件:
