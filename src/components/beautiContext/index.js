@@ -28,8 +28,8 @@ import BeautiContextSubmenu from './Component/contextmenu/contextsubmenu'
     Vue.directive('beautiContext', BeautiContextDirective)
  }
 
- if( typeof window !== 'undefined' && window.Vue) {
-   install (window.Vue)
+ if(typeof window !== 'undefined' && window.Vue) {
+    install (window.Vue)
  }
 
 export default {

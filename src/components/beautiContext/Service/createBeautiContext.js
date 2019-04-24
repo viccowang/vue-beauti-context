@@ -86,7 +86,7 @@ function getUserComponentAsync (component) {
           resolve(res.default)
         })
       } catch (e) {
-        console.error(e)
+        // console.error(e)
       }
     } else {
       resolve(component)

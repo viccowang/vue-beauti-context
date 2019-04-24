@@ -12,7 +12,11 @@
 
 ![右键菜单](http://i66.tinypic.com/2nu7lo5.png)
 
-<!-- [在线demo](https://codepen.io/vicco/pen/xBQVJx) -->
+---
+
+[查看在线demo](https://codepen.io/vicco/pen/WWaoZe)
+
+---
 
 ## 功能:
 - 两种创建方式，即通过当前实例创建， 也可以通过指令的方式方式创建
