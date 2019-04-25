@@ -38,32 +38,34 @@ export default {
   },
   watch: {
     showSubmenu (isShow) {
-      if (isShow) {
-        const subMenuRef = this.$refs.submenu
-        const subMenuListRef = this.$refs.subMenuListRef
-        const zIndex = this.$$BeautiContextmenu.zIndex
-        this.$$BeautiContextmenu.zIndex++
-        if (subMenuRef) {
-          this.$nextTick(() => {
-            const menuPos = _fixesContextPos(subMenuRef, subMenuListRef, 'submenu')
-            this.menuPos = {
-              left: `${menuPos.left}px`,
-              top: `${menuPos.top}px`,
-              zIndex
-            }
-          })
-        }
-      } else {
-        this.menuPos = {}
-        this.$$BeautiContextmenu.zIndex--
+      if (!isShow) {
+       this.menuPos = {}
+       this.$$BeautiContextmenu.zIndex--
       }
     }
   },
   methods: {
+    initMenuPos () {
+      const subMenuRef = this.$refs.submenu
+      const subMenuListRef = this.$refs.subMenuListRef
+      const zIndex = this.$$BeautiContextmenu.zIndex
+      this.$$BeautiContextmenu.zIndex++
+      if (subMenuRef) {
+        this.$nextTick(() => {
+          const menuPos = _fixesContextPos(subMenuRef, subMenuListRef, 'submenu')
+          this.menuPos = {
+            left: `${menuPos.left}px`,
+            top: `${menuPos.top}px`,
+            zIndex
+          }
+        })
+      }
+    },
     showSubmenuHandler () {
       clearTimeout(this.outTimer)
       this.enterTimer = setTimeout(() => {
         this.showSubmenu = true
+        this.initMenuPos()
       }, 300)
     },
     hideSubmenuHandler () {

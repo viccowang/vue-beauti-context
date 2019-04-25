@@ -41,8 +41,8 @@ export function _fixesContextPos (eventTarget, context, type) {
     style.top = evRect.bottom + contextRect.height + 10 > docHeight ? docHeight - contextRect.height - 10 : evRect.bottom
   }
   if (type === 'submenu') {
-    style.left = evRect.right + contextRect.width + 10 > docWidth ? -contextRect.width : evRect.width
-    style.top = evRect.bottom + contextRect.height + 10 > docHeight ? -(contextRect.bottom - docHeight + 10) : 0
+    style.left = evRect.right + contextRect.width > docWidth + 10 ? -contextRect.width : evRect.width
+    style.top = evRect.bottom + contextRect.height > docHeight ? -(contextRect.bottom - docHeight + 10) : 0
   }
 
   return style
