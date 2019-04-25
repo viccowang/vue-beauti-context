@@ -2,6 +2,7 @@
 
 <p align="center">
 <a href="https://www.npmjs.com/package/vue-beauti-context"><img src="https://img.shields.io/npm/v/vue-beauti-context.svg?style=flat-square" /></a>
+ <img src="https://img.shields.io/npm/l/vue-beauti-context.svg" alt="">
 <p>
 
 预览
@@ -133,7 +134,7 @@ OK，这里我们提供一套制作好的完美的多级右键菜单可供使用
 | 属性 | 描述 | 必须 | 默认值 | 可选值 |
 | -- | -- | -- | -- | -- |
 | type | 表示鼠标触发的事件类型 | 非必须 | click | click, mouseenter, contextmenu |
-| debounce | 是否使用烟垂执行，如表悬停时候会使用到，是立即展示还是延迟展示 | 非必须 | true | true/false |
+| debounce | 是否使用延迟执行，如表悬停时候会使用到，是立即展示还是延迟展示 | 非必须 | true | true/false |
 | debounceTime | 延迟时间，如果启用了则可以设置，单位ms | 非必须 | 300 | any time |
 
 ### beauti-context 事件
