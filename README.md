@@ -178,7 +178,7 @@ clickItemHandler( menu, eventTarget, params) {
 ---
 
 
-> 如发现有任何bug或文档错误请及时联系作者
+> 如发现有任何bug或文档错误请提Issues或者联系作者
 > 
 > Wechat： viccowang / QQ: 1232180 / Email: viccowang@gmail.com
 >
