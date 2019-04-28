@@ -77,10 +77,11 @@ export default {
     },
     visible (isVisible) {
       if (isVisible) {
-        this.$emit('beforeShow', this, this.event, this.slotData)
+        this.emitEventHandler('show')
         // binding event
         document.body.addEventListener('click', this.beautiClickEvent)
       } else {
+        this.emitEventHandler('hide')
         // unbinding event
         document.body.removeEventListener('click', this.beautiClickEvent)
       }
@@ -99,6 +100,13 @@ export default {
     beautiClickEvent (ev) {
       if (this.event.target !== ev.target && !this.$el.contains(ev.target)) {
         this.visible = false
+      }
+    },
+    emitEventHandler (eventType) {
+      if ( this[eventType] && typeof (this[eventType]) === 'function' )  {
+        this[eventType](this, this.event, this.slotData)
+      } else {
+        this.$emit(eventType, this, this.event, this.slotData)
       }
     }
   }

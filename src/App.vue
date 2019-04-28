@@ -30,12 +30,21 @@
         <li>集成了完美的多级右键菜单模式，可静态创建也可动态创建，支持参数传递等</li>
       </ul>
     </section>
+    <section>
+      <h4>例子</h4>
+      <BeautiCtxExample />
+    </section>
   </div>
 </template>
 
 <script>
+import BeautiCtxExample from './example'
+
 export default {
-  name: "app"
+  name: "app",
+  components: {
+    BeautiCtxExample
+  }
 };
 </script>
 
@@ -43,15 +52,15 @@ export default {
 html, body {
   padding: 0;
   margin: 0;
-  font-size: 16px;
-}
-#app {
-  position: relative;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  font-size: 16px;
   color: #2c3e50;
+}
+#app {
+  position: relative;
   padding: 50px;
 
   .logo {
