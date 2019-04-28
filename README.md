@@ -113,6 +113,8 @@ OK，这里我们提供一套制作好的完美的多级右键菜单可供使用
 | component | 配置弹出窗口需要加载的组件，可以是同步组件，也可以是通过require加载的异步组件 | 非必须 | - |
 | useSlot | 配置了以后将可以在组件中使用slot，当设置了该属性后，component和text会失效 | 非必须 | false |
 | customStyle | 可以自定义弹出窗口的内部样式，使用对象的方式定义，该样式会直接合并到弹出窗上 | 非必须 | {} |
+| show | 菜单展示的回调 | this(当前点击的菜单实例), eventTarget(触发窗口的触发对象), params(通过指令传递的参数) | - | - |
+| hide | 菜单关闭的回调 | this(当前点击的菜单实例), eventTarget(触发窗口的触发对象), params(通过指令传递的参数) | - | - |
 
 例子：
 ```javascript
@@ -124,6 +126,12 @@ OK，这里我们提供一套制作好的完美的多级右键菜单可供使用
     component: CustomComponent,
     customStyle: {
       padding: '10px'
+    },
+    show (instance, event, params) {
+      // show hook
+    },
+    hide ( instance, event, params) {
+      // hide hook
     }
   })
 ```
@@ -140,7 +148,8 @@ OK，这里我们提供一套制作好的完美的多级右键菜单可供使用
 ### beauti-context 事件
 | 事件 | 描述 | 参数 |
 | -- | -- | -- |
-| beforeShow | 菜单展示前的回调 | this(当前点击的菜单实例), eventTarget(触发窗口的触发对象), params(通过指令传递的参数) |
+| show | 菜单展示的回调 | this(当前点击的菜单实例), eventTarget(触发窗口的触发对象), params(通过指令传递的参数) |
+| hide | 菜单关闭的回调 | this(当前点击的菜单实例), eventTarget(触发窗口的触发对象), params(通过指令传递的参数) |
 
 ### beauti-context-submenu 属性
 | 属性 | 描述 | 必须 | 默认值 | 可选值 |
@@ -171,7 +180,6 @@ OK，这里我们提供一套制作好的完美的多级右键菜单可供使用
 ```javascript
 clickItemHandler( menu, eventTarget, params) {
   // params === item
-  console.log(params)
 }
 ```
 
